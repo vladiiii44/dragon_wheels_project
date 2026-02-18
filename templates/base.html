@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DragON Wheels - Автомобили из Китая{% endblock %}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body style="background-color: #f8f9fa; font-family: 'Inter', sans-serif; line-height: 1.6;">
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);">
+        <div class="container">
+            <!-- Логотип компании -->
+            <a class="navbar-brand" href="{% url 'home' %}" style="font-weight: 700; font-size: 1.5rem;">
+                <span style="color: #FFC107;">🐉 DRAG</span><span style="color: white;">ON WHEELS</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}" style="color: #E0E0E0; font-weight: 500;">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'car_list' %}" style="color: #E0E0E0; font-weight: 500;">
+                            Каталог авто
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}" style="color: #E0E0E0; font-weight: 500;">
+                            О компании
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacts' %}" style="color: #E0E0E0; font-weight: 500;">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="py-4" style="background-color: #2d2d44; color: #B0B0B0; border-top: 1px solid #e0e0e0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h6 style="color: #FFFFFF; font-weight: 600; margin-bottom: 1rem;">DragON Wheels</h6>
+                    <p style="color: #E0E0E0;">Автомобили из Китая в Беларуси</p>
+                    <p style="color: #E0E0E0;">📍 Минск, Беларусь</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 style="color: #FFFFFF; font-weight: 600; margin-bottom: 1rem;">Контакты</h6>
+                    <p style="color: #E0E0E0;"><i class="fas fa-phone me-2"></i> +375 (29) 160-20-06</p>
+                    <p style="color: #E0E0E0;"><i class="fas fa-envelope me-2"></i> info@dragonwheels.by</p>
+                    <p style="color: #E0E0E0;"><i class="fas fa-clock me-2"></i> Пн-Пт: 9:00-19:00</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 style="color: #FFFFFF; font-weight: 600; margin-bottom: 1rem;">Мессенджеры</h6>
+                    <div class="d-flex gap-3 mt-2 flex-wrap">
+                        <a href="https://wa.me/375291602006" 
+                           target="_blank" 
+                           style="color: #25D366; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; background-color: rgba(255,255,255,0.1);">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                        <a href="https://t.me/+375291602006" 
+                           target="_blank" 
+                           style="color: #0088cc; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; background-color: rgba(255,255,255,0.1);">
+                            <i class="fab fa-telegram me-2"></i>Telegram
+                        </a>
+                        <a href="viber://chat?number=%2B375291602006" 
+                           target="_blank" 
+                           style="color: #8f5db7; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; background-color: rgba(255,255,255,0.1);">
+                            <i class="fab fa-viber me-2"></i>Viber
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #444; margin: 20px 0;">
+            <p class="text-center mb-0" style="color: #888; font-size: 0.9rem;">
+                © 2026 DragON Wheels. Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

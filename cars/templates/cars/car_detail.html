@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ car.brand }} {{ car.model }} - DragON Wheels{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Основная информация об авто -->
+    <div class="col-lg-8">
+        <div class="card mb-4" style="background: white; border: 1px solid #e0e0e0;">
+            <div class="card-body">
+                <h4 class="mb-4" style="color: #333;">{{ car.brand }} {{ car.model }} ({{ car.year }})</h4>
+                
+                <!-- Фото автомобиля -->
+                <div class="mb-4 text-center">
+                    {% if car.image %}
+                    <img src="{{ car.image.url }}" alt="{{ car.brand }} {{ car.model }}" 
+                         style="width: 100%; max-height: 400px; object-fit: contain; border-radius: 4px; border: 1px solid #e0e0e0;">
+                    {% else %}
+                    <div style="background: #f5f5f5; border-radius: 4px; padding: 60px; border: 1px solid #e0e0e0;">
+                        <div style="font-size: 64px; color: #ccc;">🚗</div>
+                        <small style="color: #888;">Нет фото</small>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Описание -->
+                <div class="mb-4">
+                    <h6 style="color: #333;">Описание автомобиля</h6>
+                    <p style="color: #666;">{{ car.description }}</p>
+                </div>
+                
+                <!-- Характеристики -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h6 style="color: #333;">Технические характеристики</h6>
+                        <ul class="list-unstyled" style="color: #666;">
+                            <li class="mb-2"><strong>Марка:</strong> {{ car.brand }}</li>
+                            <li class="mb-2"><strong>Модель:</strong> {{ car.model }}</li>
+                            <li class="mb-2"><strong>Год выпуска:</strong> {{ car.year }}</li>
+                            <li class="mb-2"><strong>Объем двигателя:</strong> {{ car.engine_volume }} л</li>
+                            <li class="mb-2"><strong>Тип топлива:</strong> {{ car.get_fuel_type_display }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 style="color: #333;">Дополнительно</h6>
+                        <ul class="list-unstyled" style="color: #666;">
+                            <li class="mb-2"><strong>Коробка передач:</strong> {{ car.get_transmission_display }}</li>
+                            <li class="mb-2"><strong>Мощность:</strong> {{ car.power }} л.с.</li>
+                            <li class="mb-2"><strong>Пробег:</strong> {{ car.mileage }} км</li>
+                            <li class="mb-2"><strong>Состояние:</strong> {% if car.mileage == 0 %}Новый{% else %}С пробегом{% endif %}</li>
+                            <li class="mb-2"><strong>Особенности:</strong> {{ car.features }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Боковая панель с ценами и контактами -->
+    <div class="col-lg-4">
+        <!-- Цены -->
+        <div class="card mb-4" style="background: white; border: 1px solid #e0e0e0;">
+            <div class="card-body text-center">
+                <h6 style="color: #333;">Цены</h6>
+                
+                <div class="mb-4 mt-3">
+                    <div style="color: #888; font-size: 0.9rem;">Цена в Китае</div>
+                    <div class="h5" style="color: #666;">${{ car.price_china }}</div>
+                </div>
+                
+                <div class="mb-4">
+                    <div style="color: #888; font-size: 0.9rem;">Цена в Беларуси</div>
+                    <div class="h4" style="color: #333;">${{ car.price_belarus }}</div>
+                    <small style="color: #888;">с учетом растаможки и доставки</small>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <a href="tel:+375291602006" class="btn py-3" 
+                       style="background: #424242; color: white; border: none;">
+                        Заказать автомобиль
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Контакты -->
+        <div class="card mb-4" style="background: white; border: 1px solid #e0e0e0;">
+            <div class="card-body">
+                <h6 style="color: #333;">Контактная информация</h6>
+                <div class="mt-3" style="color: #666;">
+                    <p><strong>Телефон:</strong> +375 (29) 160-20-06</p>
+                    <p><strong>Email:</strong> info@dragonwheels.by</p>
+                    <p><strong>Город:</strong> Минск</p>
+                    <p><strong>Время работы:</strong> Пн-Пт: 9:00-19:00</p>
+                </div>
+                
+                <hr style="color: #e0e0e0;">
+                
+                <div class="mt-3">
+                    <h6 style="color: #333;">Мессенджеры</h6>
+                    <div class="d-flex gap-2 mt-2">
+                        <span style="color: #888;">WhatsApp</span>
+                        <span style="color: #888;">Telegram</span>
+                        <span style="color: #888;">Viber</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка назад -->
+        <div class="card" style="background: white; border: 1px solid #e0e0e0;">
+            <div class="card-body text-center">
+                <a href="{% url 'car_list' %}" class="btn w-100" 
+                   style="background: #f8f9fa; color: #333; border: 1px solid #e0e0e0;">
+                    Назад к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,538 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}DragON Wheels - Официальный дилер автомобилей из Китая{% endblock %}
+
+{% block content %}
+<!-- Герой-секция -->
+<div class="hero-section position-relative overflow-hidden mb-6" style="
+    background: linear-gradient(rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.92)),
+                url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 12px;
+    padding: 100px 20px;
+    margin-top: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+">
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark px-4 py-2 mb-3" style="font-size: 0.9rem; font-weight: 600;">
+                        <i class="fas fa-award me-2"></i> Официальный дилер с 2025 года
+                    </span>
+                    <h1 class="display-4 fw-bold mb-3" style="color: white;">
+                        Автомобили премиум-класса<br>
+                        <span class="text-warning">со всего мира</span> в Беларуси
+                    </h1>
+                    <p class="lead fs-4 mb-4" style="color: #E0E0E0;">
+                        Прямые поставки от производителей Китая, Европы и Азии.<br>
+                        Полное юридическое сопровождение. Экономия до 40%.
+                    </p>
+                </div>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-warning rounded-circle p-2 me-3">
+                                <i class="fas fa-globe-americas text-dark"></i>
+                            </div>
+                            <div>
+                                <div class="fw-semibold">Международные поставки</div>
+                                <small style="color: #B0B0B0;">Китай, Германия, Япония, Корея</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-warning rounded-circle p-2 me-3">
+                                <i class="fas fa-file-contract text-dark"></i>
+                            </div>
+                            <div>
+                                <div class="fw-semibold">Официальные документы</div>
+                                <small style="color: #B0B0B0;">Полное таможенное оформление</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'car_list' %}" class="btn btn-warning btn-lg px-5 py-3 fw-semibold">
+                        <i class="fas fa-car me-2"></i>Смотреть каталог
+                    </a>
+                    <a href="tel:+375291602006" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
+                        <i class="fas fa-phone me-2"></i>Бесплатная консультация
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <div class="bg-dark p-5 rounded-3" style="border: 2px solid rgba(255, 193, 7, 0.3); background: rgba(0,0,0,0.7);">
+                    <div class="mb-4">
+                        <i class="fas fa-dragon fa-4x text-warning"></i>
+                    </div>
+                    <h4 class="text-warning mb-3 fw-bold">DragON Wheels</h4>
+                    <p class="mb-4" style="color: #B0B0B0; font-size: 1.1rem;">
+                        Надежность и качество<br>с 2025 года
+                    </p>
+                    <div class="border-top border-secondary pt-4">
+                        <p class="mb-2 fs-5">
+                            <i class="fas fa-phone text-warning me-2"></i>
+                            <strong>+375 (29) 160-20-06</strong>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-clock text-warning me-2"></i>
+                            Ежедневно: 9:00-20:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Преимущества -->
+<div class="mb-7">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3" style="color: #1a1a2e;">Почему выбирают нас</h2>
+        <p class="text-muted fs-5">Более 200 довольных клиентов с 2025 года</p>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+            <div class="card border-0 shadow-lg h-100" style="border-top: 4px solid #4CAF50 !important;">
+                <div class="card-body text-center p-4">
+                    <div class="bg-light rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-handshake fa-2x" style="color: #4CAF50;"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold" style="color: #1a1a2e;">Прямые поставки</h5>
+                    <p class="card-text text-muted">
+                        Работаем напрямую с заводами Китая, Германии, Японии и Кореи
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="card border-0 shadow-lg h-100" style="border-top: 4px solid #2196F3 !important;">
+                <div class="card-body text-center p-4">
+                    <div class="bg-light rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-file-contract fa-2x" style="color: #2196F3;"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold" style="color: #1a1a2e;">Полное оформление</h5>
+                    <p class="card-text text-muted">
+                        Таможенное оформление, ПТС, регистрация - всё под ключ
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="card border-0 shadow-lg h-100" style="border-top: 4px solid #FF9800 !important;">
+                <div class="card-body text-center p-4">
+                    <div class="bg-light rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-shield-alt fa-2x" style="color: #FF9800;"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold" style="color: #1a1a2e;">Гарантия 2 года</h5>
+                    <p class="card-text text-muted">
+                        Официальная гарантия на все автомобили и сервисное обслуживание
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="card border-0 shadow-lg h-100" style="border-top: 4px solid #9C27B0 !important;">
+                <div class="card-body text-center p-4">
+                    <div class="bg-light rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-headset fa-2x" style="color: #9C27B0;"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold" style="color: #1a1a2e;">Персональный менеджер</h5>
+                    <p class="card-text text-muted">
+                        Индивидуальное сопровождение на всех этапах покупки
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Бренды-партнеры -->
+<div class="mb-7 py-6 rounded-3" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+    <div class="container">
+        <div class="text-center mb-6">
+            <h2 class="fw-bold mb-3" style="color: #1a1a2e;">Работаем с ведущими мировыми брендами</h2>
+            <p class="text-muted fs-5">Прямые поставки автомобилей из разных стран мира</p>
+        </div>
+        
+        <!-- Китайские бренды -->
+        <div class="mb-5">
+            <h4 class="text-center mb-4" style="color: #1a1a2e;">
+                <i class="fas fa-flag me-2"></i>Китайские бренды
+            </h4>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Chery</div>
+                        <small class="text-muted">Tiggo, Arrizo, Omoda</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Geely</div>
+                        <small class="text-muted">Coolray, Monjaro, Emgrand</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Haval</div>
+                        <small class="text-muted">Jolion, H6, Dargo, F7</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Zeekr</div>
+                        <small class="text-muted">001, 009, X</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">BYD</div>
+                        <small class="text-muted">Tang, Han, Seal, Dolphin</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Немецкие бренды -->
+        <div class="mb-5">
+            <h4 class="text-center mb-4" style="color: #1a1a2e;">
+                <i class="fas fa-flag me-2"></i>Немецкие бренды
+            </h4>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Volkswagen</div>
+                        <small class="text-muted">Tiguan, Passat, Polo</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Mercedes-Benz</div>
+                        <small class="text-muted">C-Class, E-Class, GLC</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">BMW</div>
+                        <small class="text-muted">3 Series, 5 Series, X3</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Audi</div>
+                        <small class="text-muted">A4, A6, Q5, Q7</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Porsche</div>
+                        <small class="text-muted">Cayenne, Macan, Panamera</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Японские и корейские бренды -->
+        <div>
+            <h4 class="text-center mb-4" style="color: #1a1a2e;">
+                <i class="fas fa-globe-asia me-2"></i>Японские и корейские бренды
+            </h4>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Toyota</div>
+                        <small class="text-muted">Camry, RAV4, Land Cruiser</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Lexus</div>
+                        <small class="text-muted">RX, NX, ES, LX</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Honda</div>
+                        <small class="text-muted">CR-V, Accord, Civic</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Hyundai</div>
+                        <small class="text-muted">Tucson, Santa Fe, Sonata</small>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow-sm border">
+                        <div class="fw-bold text-dark mb-2 fs-5">Kia</div>
+                        <small class="text-muted">Sportage, Sorento, K5</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Процесс работы -->
+<div class="mb-7">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3" style="color: #1a1a2e;">4 простых шага к вашему авто</h2>
+        <p class="text-muted fs-5">Прозрачная схема от выбора до получения автомобиля</p>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+            <div class="position-relative">
+                <div class="step-number bg-warning text-dark fw-bold">01</div>
+                <div class="ps-5">
+                    <h5 class="mb-3 fw-bold" style="color: #1a1a2e;">Консультация</h5>
+                    <p class="text-muted mb-0">
+                        Подбор автомобиля по вашим требованиям, бюджету и стране производства
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="position-relative">
+                <div class="step-number bg-warning text-dark fw-bold">02</div>
+                <div class="ps-5">
+                    <h5 class="mb-3 fw-bold" style="color: #1a1a2e;">Расчет</h5>
+                    <p class="text-muted mb-0">
+                        Детальный расчет стоимости с учетом доставки и таможенного оформления
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="position-relative">
+                <div class="step-number bg-warning text-dark fw-bold">03</div>
+                <div class="ps-5">
+                    <h5 class="mb-3 fw-bold" style="color: #1a1a2e;">Договор</h5>
+                    <p class="text-muted mb-0">
+                        Заключение официального договора, оплата и начало оформления
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="position-relative">
+                <div class="step-number bg-warning text-dark fw-bold">04</div>
+                <div class="ps-5">
+                    <h5 class="mb-3 fw-bold" style="color: #1a1a2e;">Получение</h5>
+                    <p class="text-muted mb-0">
+                        Доставка, таможенное оформление, регистрация и передача автомобиля
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA секция -->
+<div class="bg-dark text-white rounded-3 p-6 mb-7" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <h3 class="fw-bold mb-3">Готовы выбрать автомобиль?</h3>
+            <p class="mb-0 fs-5" style="color: #B0B0B0;">
+                Оставьте заявку на бесплатную консультацию с нашим специалистом.<br>
+                Мы подберем оптимальный вариант из Китая, Германии, Японии или Кореи.
+            </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="tel:+375291602006" class="btn btn-warning btn-lg px-5 py-3 fw-semibold fs-5">
+                <i class="fas fa-phone me-2"></i>Получить консультацию
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Контакты -->
+<div class="mb-6">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3" style="color: #1a1a2e;">Свяжитесь с нами</h2>
+        <p class="text-muted fs-5">Выберите удобный способ связи</p>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+                <div class="card-body text-center p-5">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-phone fa-2x text-primary"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold">Телефон</h5>
+                    <p class="card-text text-muted mb-4">
+                        Позвоните для быстрой консультации по автомобилям из любой страны
+                    </p>
+                    <a href="tel:+375291602006" class="btn btn-outline-primary btn-lg">
+                        +375 (29) 160-20-06
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+                <div class="card-body text-center p-5">
+                    <div class="bg-success bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-comments fa-2x text-success"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold">Мессенджеры</h5>
+                    <p class="card-text text-muted mb-4">
+                        Пишите в удобном для вас мессенджере - ответим в течение 15 минут
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://wa.me/375291602006" target="_blank" class="btn btn-success btn-lg">
+                            WhatsApp
+                        </a>
+                        <a href="https://t.me/+375291602006" target="_blank" class="btn btn-primary btn-lg">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg h-100">
+                <div class="card-body text-center p-5">
+                    <div class="bg-dark bg-opacity-10 rounded-circle p-4 d-inline-block mb-3">
+                        <i class="fas fa-map-marker-alt fa-2x text-dark"></i>
+                    </div>
+                    <h5 class="card-title mb-3 fw-bold">Офис в Минске</h5>
+                    <p class="card-text text-muted mb-4">
+                        Приезжайте на личную консультацию в наш офис
+                    </p>
+                    <div class="mb-3">
+                        <p class="fw-semibold mb-2 fs-5">
+                            <i class="fas fa-city text-warning"></i> г. Минск
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-clock text-warning"></i>
+                            Ежедневно: 9:00-20:00
+                        </p>
+                    </div>
+                    <a href="{% url 'contacts' %}" class="btn btn-outline-dark btn-lg">
+                        Все контакты
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.15) 0%, transparent 50%);
+        z-index: 1;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    }
+    
+    .btn-warning {
+        background: linear-gradient(135deg, #FFC107, #FF9800);
+        border: none;
+        font-weight: 600;
+    }
+    
+    .btn-warning:hover {
+        background: linear-gradient(135deg, #FFA000, #F57C00);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(255, 152, 0, 0.4);
+    }
+    
+    .rounded-3 {
+        border-radius: 20px !important;
+    }
+    
+    .py-6 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .mb-6 {
+        margin-bottom: 4rem !important;
+    }
+    
+    .mb-7 {
+        margin-bottom: 5rem !important;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 20px !important;
+        }
+        
+        .display-4 {
+            font-size: 2.2rem;
+        }
+        
+        .lead {
+            font-size: 1.1rem;
+        }
+        
+        .step-number {
+            position: static;
+            margin-bottom: 20px;
+        }
+        
+        .ps-5 {
+            padding-left: 0 !important;
+        }
+        
+        .btn-lg {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+    }
+</style>
+{% endblock %}

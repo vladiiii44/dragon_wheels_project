@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Каталог автомобилей - DragON Wheels{% endblock %}
+
+{% block content %}
+<!-- Заголовок каталога -->
+<div class="text-center mb-5">
+    <h4 class="mb-3" style="color: #333;">
+        Каталог автомобилей
+    </h4>
+    <p style="color: #666;">Выберите автомобиль для получения подробной информации</p>
+</div>
+
+{% if cars %}
+<div class="row">
+    {% for car in cars %}
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100" style="background: white; border: 1px solid #e0e0e0; border-radius: 4px;">
+            <div class="card-body">
+                <!-- Фотография автомобиля -->
+                <div class="text-center mb-3" style="height: 200px; overflow: hidden; border-radius: 4px; border: 1px solid #e0e0e0; background-color: #f5f5f5;">
+                    {% if car.image %}
+                    <img src="{{ car.image.url }}" alt="{{ car.brand }} {{ car.model }}" 
+                         style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
+                    {% else %}
+                    <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 48px; color: #ccc;">🚗</div>
+                        <small style="color: #888;">Фото отсутствует</small>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <h6 class="card-title" style="color: #333;">{{ car.brand }} {{ car.model }}</h6>
+                
+                <p class="card-text">
+                    <small style="color: #888;">
+                        {{ car.year }} г. • {{ car.engine_volume }}л • {{ car.get_transmission_display }}
+                    </small>
+                </p>
+                
+                <p class="card-text" style="color: #666;">{{ car.description|truncatechars:100|default:"Прямая поставка из Китая. Новый авто." }}</p>
+                
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <div>
+                        <div style="color: #888; font-size: 0.9rem;">В Китае: ${{ car.price_china }}</div>
+                        <div class="fw-bold" style="color: #333;">${{ car.price_belarus }}</div>
+                    </div>
+                    <a href="{% url 'car_detail' car.id %}" class="btn" 
+                       style="background: #555; color: white; border: none; padding: 8px 16px;">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<!-- Если нет автомобилей в базе -->
+<div class="text-center py-5">
+    <div class="mb-4">
+        <div style="font-size: 48px; color: #ccc;">🚗</div>
+    </div>
+    <h6 style="color: #333;">Автомобили в данный момент отсутствуют</h6>
+    <p class="mb-4" style="color: #666;">Автомобили будут добавлены в ближайшее время</p>
+    <p style="color: #888;">Для добавления автомобилей используйте админ-панель</p>
+</div>
+{% endif %}
+
+<!-- Контакты под каталогом -->
+<div class="card mt-5" style="background: white; border: 1px solid #e0e0e0;">
+    <div class="card-body text-center">
+        <h6 class="mb-4" style="color: #333;">Нужна консультация по выбору автомобиля?</h6>
+        <p class="mb-4" style="color: #666;">Наши специалисты помогут выбрать оптимальный вариант</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <a href="tel:+375291602006" class="btn w-100 mb-3 py-3" 
+                   style="background: #555; color: white; border: none;">
+                    📞 Позвонить: +375 (29) 160-20-06
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <p class="mb-3" style="color: #666;">Также пишите в мессенджерах:</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://wa.me/375291602006?text=Здравствуйте!%20Интересует%20автомобиль%20с%20вашего%20сайта" 
+                   target="_blank" class="btn" style="background: #25D366; color: white; border: none; padding: 8px 16px;">
+                    WhatsApp
+                </a>
+                <a href="https://t.me/+375291602006" 
+                   target="_blank" class="btn" style="background: #0088cc; color: white; border: none; padding: 8px 16px;">
+                    Telegram
+                </a>
+                <a href="viber://chat?number=%2B375291602006" 
+                   target="_blank" class="btn" style="background: #8f5db7; color: white; border: none; padding: 8px 16px;">
+                    Viber
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

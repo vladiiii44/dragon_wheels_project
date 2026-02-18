@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Автомобили из Китая в Беларуси - DragON Wheels{% endblock %}
+
+{% block content %}
+<!-- Герой секция с волнами -->
+<section class="hero-section mb-5 position-relative" style="background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf5 100%); border-radius: 0 0 50px 50px;">
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center min-vh-50 py-5">
+            <div class="col-lg-7">
+                <!-- Бейдж -->
+                <div class="mb-4">
+                    <span class="badge bg-dark text-white px-4 py-2" style="font-size: 0.9rem; border-radius: 50px; letter-spacing: 1px;">
+                        <i class="fas fa-dragon me-2" style="color: #FFC107;"></i>DRAGON WHEELS
+                    </span>
+                </div>
+                
+                <h1 class="display-3 fw-bold mb-4" style="color: #1e2b37; line-height: 1.2;">
+                    Автомобили из Китая <span style="color: #FF6B35;">с заботой о вас</span>
+                </h1>
+                
+                <p class="lead mb-4" style="color: #5a6874; font-size: 1.2rem; max-width: 90%;">
+                    Прямые поставки от производителей. Экономия до 30%. Полное сопровождение сделки от выбора до регистрации.
+                </p>
+                
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{% url 'car_list' %}" class="btn btn-lg px-5 py-3" style="background-color: #FF6B35; color: white; border: none; font-weight: 600; border-radius: 12px;">
+                        <i class="fas fa-car me-2"></i>Выбрать авто
+                    </a>
+                    <a href="tel:+375291602006" class="btn btn-lg px-5 py-3" style="background: transparent; color: #1e2b37; border: 2px solid #d0d7de; font-weight: 600; border-radius: 12px;">
+                        <i class="fas fa-phone-alt me-2" style="color: #FF6B35;"></i>+375 (29) 160-20-06
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-5">
+                <!-- Анимированные автомобили -->
+                <div class="position-relative" style="height: 400px;">
+                    <!-- Автомобиль 1 -->
+                    <div class="position-absolute" style="top: 20px; right: 0; animation: float 3s ease-in-out infinite;">
+                        <div class="card border-0 shadow-lg" style="width: 280px; border-radius: 20px; transform: rotate(5deg);">
+                            <div class="card-body p-3">
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 60px; height: 60px; background: #eef2f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                        <i class="fas fa-car fa-2x" style="color: #FF6B35;"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Chery Tiggo 8</div>
+                                        <div class="text-muted small">от $32,900</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Автомобиль 2 -->
+                    <div class="position-absolute" style="top: 140px; left: 0; animation: float 3.5s ease-in-out infinite;">
+                        <div class="card border-0 shadow-lg" style="width: 280px; border-radius: 20px; transform: rotate(-3deg);">
+                            <div class="card-body p-3">
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 60px; height: 60px; background: #eef2f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                        <i class="fas fa-car fa-2x" style="color: #2B7A78;"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Geely Coolray</div>
+                                        <div class="text-muted small">от $25,900</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Автомобиль 3 -->
+                    <div class="position-absolute" style="bottom: 20px; right: 40px; animation: float 4s ease-in-out infinite;">
+                        <div class="card border-0 shadow-lg" style="width: 280px; border-radius: 20px; transform: rotate(2deg);">
+                            <div class="card-body p-3">
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 60px; height: 60px; background: #eef2f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                                        <i class="fas fa-car fa-2x" style="color: #9A7D0C;"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Haval Jolion</div>
+                                        <div class="text-muted small">от $28,900</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Волны внизу -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="display: block; width: 100%; height: 60px;">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: #ffffff;"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Шаги работы -->
+<section class="steps-section mb-5 py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="color: #1a1a2e; font-size: 2.5rem;">4 простых шага к вашему авто</h2>
+            <p class="text-muted" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                Прозрачная схема от выбора до получения автомобиля
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4" style="border-radius: 12px;">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark" style="font-size: 1.5rem; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">01</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #1a1a2e;">Консультация</h4>
+                    <p class="text-muted">Подбор автомобиля по вашим требованиям и бюджету</p>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4" style="border-radius: 12px;">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark" style="font-size: 1.5rem; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">02</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #1a1a2e;">Расчет</h4>
+                    <p class="text-muted">Детальный расчет с учетом доставки и таможни</p>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4" style="border-radius: 12px;">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark" style="font-size: 1.5rem; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">03</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #1a1a2e;">Договор</h4>
+                    <p class="text-muted">Официальный договор и начало оформления</p>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4" style="border-radius: 12px;">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark" style="font-size: 1.5rem; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">04</span>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #1a1a2e;">Получение</h4>
+                    <p class="text-muted">Доставка, регистрация и передача авто</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA секция -->
+<section class="cta-section mb-5">
+    <div class="container">
+        <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); border-radius: 16px;">
+            <div class="card-body p-5 text-center">
+                <h2 class="text-white fw-bold mb-4" style="font-size: 2rem;">Готовы выбрать автомобиль?</h2>
+                <p class="text-light mb-4" style="font-size: 1.2rem;">
+                    Оставьте заявку на бесплатную консультацию с нашим специалистом.
+                </p>
+                <p class="text-warning mb-4" style="font-size: 1.1rem; font-weight: 500;">
+                    Мы подберем оптимальный вариант из Китая
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="tel:+375291602006" class="btn btn-warning btn-lg px-5 py-3" style="font-weight: 600;">
+                        <i class="fas fa-phone-alt me-2"></i>Позвонить сейчас
+                    </a>
+                    <a href="https://wa.me/375291602006" target="_blank" class="btn btn-success btn-lg px-5 py-3" style="font-weight: 600;">
+                        <i class="fab fa-whatsapp me-2"></i>Написать в WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+</style>
+{% endblock %}
